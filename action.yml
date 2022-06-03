@@ -1,0 +1,13 @@
+name: "verify version"
+description: "verify given version bumped up"
+inputs:
+  current:
+    required: true
+    description: "current version"
+  destination:
+    description: "destination"
+    required: false
+    default: "git-tag"
+runs:
+  using: 'node16'
+  main: 'index.js'
