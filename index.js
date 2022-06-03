@@ -9,13 +9,13 @@ try {
 }
 
 function get_target_version() {
-  if (argv?.destination === "git-tag") {
+  if (destination_version === "git-tag") {
     return String.fromCharCode(...execSync("git tag -l"))
       .trim()
       .split("\n")
       .at(-1);
   } else {
-    throw Error(`destination: ${argv?.destination} is unknown`);
+    throw Error(`destination: ${destination_version} is unknown`);
   }
 }
 

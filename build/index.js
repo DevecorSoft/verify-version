@@ -1588,16 +1588,16 @@ Support boolean input list: \`true | True | TRUE | false | False | FALSE\``);
 var core = require_core();
 try {
   const current_version = core.getInput("current");
-  const destination_version = get_target_version();
-  verify(current_version, destination_version);
+  const destination_version2 = get_target_version();
+  verify(current_version, destination_version2);
 } catch (error) {
   core.setFailed(error.message);
 }
 function get_target_version() {
-  if ((argv == null ? void 0 : argv.destination) === "git-tag") {
+  if (destination_version === "git-tag") {
     return String.fromCharCode(...execSync("git tag -l")).trim().split("\n").at(-1);
   } else {
-    throw Error(`destination: ${argv == null ? void 0 : argv.destination} is unknown`);
+    throw Error(`destination: ${destination_version} is unknown`);
   }
 }
 function verify(src, dst) {
