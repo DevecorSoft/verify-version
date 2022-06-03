@@ -1,0 +1,12 @@
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test this action
+        id: hello
+        uses: devecorsoft/verify-version@v1.0.0
+        with:
+          current: "1.0.1"
+      
