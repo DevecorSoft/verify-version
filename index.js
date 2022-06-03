@@ -2,7 +2,7 @@ const core = require("@actions/core");
 
 try {
   const current_version = core.getInput("current");
-  const destination = core.getInput("current");
+  const destination = core.getInput("destination");
   const destination_version = get_target_version(destination);
   verify(current_version, destination_version);
 } catch (error) {
