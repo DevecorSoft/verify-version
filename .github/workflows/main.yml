@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Test this action
         id: hello
-        uses: devecorsoft/verify-version@v1.0.0
+        uses: devecorsoft/verify-version@v1
         with:
           current: "1.0.1"
       
