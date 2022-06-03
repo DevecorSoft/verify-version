@@ -1597,7 +1597,7 @@ try {
 }
 function get_target_version(dst) {
   if (dst === "git-tag") {
-    return String.fromCharCode(...execSync("git tag -l")).trim().split("\n").at(-1);
+    return String.fromCharCode(...execSync("git tag -l")).trim().split("\n").at(-1).slice(1);
   } else {
     throw Error(`destination: ${dst} is unknown`);
   }

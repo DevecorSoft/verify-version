@@ -1,4 +1,4 @@
-const { execSync } = require('child_process')
+const { execSync } = require("child_process");
 const core = require("@actions/core");
 
 try {
@@ -15,7 +15,8 @@ function get_target_version(dst) {
     return String.fromCharCode(...execSync("git tag -l"))
       .trim()
       .split("\n")
-      .at(-1);
+      .at(-1)
+      .slice(1);
   } else {
     throw Error(`destination: ${dst} is unknown`);
   }
