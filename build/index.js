@@ -1585,6 +1585,7 @@ Support boolean input list: \`true | True | TRUE | false | False | FALSE\``);
 });
 
 // index.js
+var { execSync } = require("child_process");
 var core = require_core();
 try {
   const current_version = core.getInput("current");

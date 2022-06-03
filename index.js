@@ -1,3 +1,4 @@
+const { execSync } = require('child_process')
 const core = require("@actions/core");
 
 try {
