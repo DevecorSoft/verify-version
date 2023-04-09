@@ -1606,7 +1606,7 @@ function verify(src, dst) {
   if (src.split(".").length !== dst.split(".").length) {
     throw Error(`we can't compare ${src} with ${dst}`);
   }
-  if (parseInt(src.replaceAll(".", "")) <= parseInt(dst.replaceAll(".", ""))) {
+  if (src <= dst) {
     throw Error("please don't forget to bump version.");
   } else {
     console.log(src);
